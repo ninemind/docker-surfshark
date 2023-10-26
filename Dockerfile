@@ -19,6 +19,7 @@ HEALTHCHECK --interval=60s --timeout=10s --start-period=30s CMD curl -s https://
 COPY startup.sh .
 COPY sockd.conf /etc/
 COPY sockd.sh .
+COPY ovpn_configs.zip .
 RUN apk add --update --no-cache openvpn wget unzip coreutils curl ufw dante-server \
     && chmod +x ./startup.sh \
     && chmod +x ./sockd.sh
